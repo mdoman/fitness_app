@@ -1,3 +1,9 @@
-body {
+.view {
     background-image: url("gym.jpg");
+    height: 100%;
+    display: block;
+}
+
+body {
+  style="margin: 5%;
 }

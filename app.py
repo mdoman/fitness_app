@@ -4,7 +4,7 @@ app = Flask(__name__)
 
 @app.route('/')
 def home():
-   return render_template('home.html')
+   return render_template('addExercise.html')
 
 @app.route('/enternew')
 def new_student():
@@ -13,24 +13,28 @@ def new_student():
 @app.route('/addrec',methods = ['POST', 'GET'])
 def addrec():
    if request.method == 'POST':
+      print(request.form)
       try:
-         nm = request.form['nm']
-         sets = request.form['sets']
-         weight = request.form['weight']
+         # get all of the data from the form
+         val = request.form['bodyPart']
+         val2 = request.form['Exercise']
+         print(val)
+         print(val2)
 
-         with sql.connect("exercises.db") as con:
+         with sql.connect("types.db") as con:
             cur = con.cursor()
 
-            cur.execute("INSERT INTO exercises (name,sets,weight) VALUES (?,?,?)",(nm,sets,weight) )
+            cur.execute("INSERT INTO types (type) VALUES (?)",[val])
 
             con.commit()
-            msg = "Record successfully added"
-      except:
+            message = "Record successfully added"
+      except Exception as err:
          con.rollback()
-         msg = "error in insert operation"
+         print(err)
+         message = "error in insert operation"
 
       finally:
-         return render_template("result.html",msg = msg)
+         return render_template("result.html",msg = message)
          con.close()
 
 @app.route('/list')

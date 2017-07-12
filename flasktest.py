@@ -25,13 +25,13 @@ def addrec():
             cur.execute("INSERT INTO students (name,addr,city,pin) VALUES (?,?,?,?)",(nm,addr,city,pin) )
 
             con.commit()
-            msg = "Record successfully added"
+            message = "Record successfully added"
       except:
          con.rollback()
-         msg = "error in insert operation"
+         message = "error in insert operation"
 
       finally:
-         return render_template("result.html",msg = msg)
+         return render_template("result.html",msg = message)
          con.close()
 
 @app.route('/list')

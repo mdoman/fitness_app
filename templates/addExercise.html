@@ -1,19 +1,409 @@
 <html>
-   <body>
+    <head>
+      <title>Add New Exercise</title>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+      <link rel="sylesheet" href="{{ url_for('static', filename='style.css') }}">
+    </head>
 
-      <form action = "{{ url_for('addrec') }}" method = "POST">
-         <h3>Exercise Information</h3>
-         Name<br>
-         <input type = "text" name = "nm"></br>
+   <body style="margin: 10%; background: #45659b; color: white">
+     <div class="view">
+      <style>
+        .view {
+          font-size: 16px
+        }
+      </style>
+       <div>
+         <h1><strong>Add an exercise</strong></h1>
+        </div>
+     <form action="{{ url_for('addrec') }}" method="POST">
+       <div class="form-group">
+      <label for="bodyPart">Choose Body Part:</label>
+      <select class="form-control" name="bodyPart">
+        <option>Chest</option>
+        <option>Legs</option>
+        <option>Back</option>
+        <option>Triceps</option>
+        <option>Biceps</option>
+        <option>Shoulders</option>
+      </select>
+      </div>
 
-         Sets<br>
-         <input type = "text" name = "sets"></br>
+      <div class="form-group">
+        <label for="Exercise">Choose Exercise:</label>
+        <select class="form-control" name="Exercise">
+           <option>Chest - Incline Bench (Dumbbells)</option>
+           <option>Chest - Decline Bench (Barbell)</option>
+           <option>Chest - Flat Bench (Barbell)</option>
+        </select>
+      </div>
+      <br>
+      <span>NOTE: Leave sets blank if not completed</span>
+      <br>
+      <br>
+      <div class="form-group">
+        <label for="numberSets">Number of Sets:</label>
+        <select class="form-control" name="numberSets">
+           <option>0</option>
+           <option>1</option>
+           <option>2</option>
+           <option>3</option>
+           <option>4</option>
+           <option>5</option>
+        </select>
+      </div>
 
-         Weight<br>
-         <input type = "text" name = "weight"></br>
+      <div class="form-group">
+        <label for="set1weight">Set 1 Weight:</label>
+        <select class="form-control" name="set1weight">
+           <option>0</option>
+           <option>5</option>
+           <option>10</option>
+           <option>15</option>
+           <option>20</option>
+           <option>25</option>
+           <option>30</option>
+           <option>35</option>
+           <option>40</option>
+           <option>45</option>
+           <option>50</option>
+           <option>55</option>
+           <option>60</option>
+           <option>65</option>
+           <option>70</option>
+           <option>75</option>
+           <option>80</option>
+           <option>85</option>
+           <option>90</option>
+           <option>95</option>
+           <option>100</option>
+           <option>105</option>
+           <option>110</option>
+           <option>115</option>
+           <option>120</option>
+           <option>125</option>
+           <option>130</option>
+           <option>135</option>
+           <option>140</option>
+           <option>145</option>
+           <option>150</option>
+           <option>155</option>
+           <option>160</option>
+           <option>165</option>
+           <option>170</option>
+           <option>175</option>
+           <option>180</option>
+           <option>185</option>
+           <option>190</option>
+           <option>195</option>
+           <option>200</option>
+           <option>205</option>
+           <option>210</option>
+        </select>
+      </div>
 
-         <input type = "submit" value = "submit"></br>
-      </form>
+      <div class="form-group">
+        <label for="set1reps">Set 1 Reps:</label>
+        <select class="form-control" name="set1reps">
+           <option>0</option>
+           <option>1</option>
+           <option>2</option>
+           <option>3</option>
+           <option>4</option>
+           <option>5</option>
+           <option>6</option>
+           <option>7</option>
+           <option>8</option>
+           <option>9</option>
+           <option>10</option>
+           <option>11</option>
+           <option>12</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="set2weight">Set 2 Weight:</label>
+        <select class="form-control" name="set2weight">
+           <option>0</option>
+           <option>5</option>
+           <option>10</option>
+           <option>15</option>
+           <option>20</option>
+           <option>25</option>
+           <option>30</option>
+           <option>35</option>
+           <option>40</option>
+           <option>45</option>
+           <option>50</option>
+           <option>55</option>
+           <option>60</option>
+           <option>65</option>
+           <option>70</option>
+           <option>75</option>
+           <option>80</option>
+           <option>85</option>
+           <option>90</option>
+           <option>95</option>
+           <option>100</option>
+           <option>105</option>
+           <option>110</option>
+           <option>115</option>
+           <option>120</option>
+           <option>125</option>
+           <option>130</option>
+           <option>135</option>
+           <option>140</option>
+           <option>145</option>
+           <option>150</option>
+           <option>155</option>
+           <option>160</option>
+           <option>165</option>
+           <option>170</option>
+           <option>175</option>
+           <option>180</option>
+           <option>185</option>
+           <option>190</option>
+           <option>195</option>
+           <option>200</option>
+           <option>205</option>
+           <option>210</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="set2reps">Set 2 Reps:</label>
+        <select class="form-control" name="set2reps">
+           <option>0</option>
+           <option>1</option>
+           <option>2</option>
+           <option>3</option>
+           <option>4</option>
+           <option>5</option>
+           <option>6</option>
+           <option>7</option>
+           <option>8</option>
+           <option>9</option>
+           <option>10</option>
+           <option>11</option>
+           <option>12</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="set3weight">Set 3 Weight:</label>
+        <select class="form-control" name="set3weight">
+           <option>0</option>
+           <option>5</option>
+           <option>10</option>
+           <option>15</option>
+           <option>20</option>
+           <option>25</option>
+           <option>30</option>
+           <option>35</option>
+           <option>40</option>
+           <option>45</option>
+           <option>50</option>
+           <option>55</option>
+           <option>60</option>
+           <option>65</option>
+           <option>70</option>
+           <option>75</option>
+           <option>80</option>
+           <option>85</option>
+           <option>90</option>
+           <option>95</option>
+           <option>100</option>
+           <option>105</option>
+           <option>110</option>
+           <option>115</option>
+           <option>120</option>
+           <option>125</option>
+           <option>130</option>
+           <option>135</option>
+           <option>140</option>
+           <option>145</option>
+           <option>150</option>
+           <option>155</option>
+           <option>160</option>
+           <option>165</option>
+           <option>170</option>
+           <option>175</option>
+           <option>180</option>
+           <option>185</option>
+           <option>190</option>
+           <option>195</option>
+           <option>200</option>
+           <option>205</option>
+           <option>210</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="set3reps">Set 3 Reps:</label>
+        <select class="form-control" name="set3reps">
+           <option>0</option>
+           <option>1</option>
+           <option>2</option>
+           <option>3</option>
+           <option>4</option>
+           <option>5</option>
+           <option>6</option>
+           <option>7</option>
+           <option>8</option>
+           <option>9</option>
+           <option>10</option>
+           <option>11</option>
+           <option>12</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="set4weight">Set 4 Weight:</label>
+        <select class="form-control" name="set4weight">
+           <option>0</option>
+           <option>5</option>
+           <option>10</option>
+           <option>15</option>
+           <option>20</option>
+           <option>25</option>
+           <option>30</option>
+           <option>35</option>
+           <option>40</option>
+           <option>45</option>
+           <option>50</option>
+           <option>55</option>
+           <option>60</option>
+           <option>65</option>
+           <option>70</option>
+           <option>75</option>
+           <option>80</option>
+           <option>85</option>
+           <option>90</option>
+           <option>95</option>
+           <option>100</option>
+           <option>105</option>
+           <option>110</option>
+           <option>115</option>
+           <option>120</option>
+           <option>125</option>
+           <option>130</option>
+           <option>135</option>
+           <option>140</option>
+           <option>145</option>
+           <option>150</option>
+           <option>155</option>
+           <option>160</option>
+           <option>165</option>
+           <option>170</option>
+           <option>175</option>
+           <option>180</option>
+           <option>185</option>
+           <option>190</option>
+           <option>195</option>
+           <option>200</option>
+           <option>205</option>
+           <option>210</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="set4reps">Set 4 Reps:</label>
+        <select class="form-control" name="set4reps">
+           <option>0</option>
+           <option>1</option>
+           <option>2</option>
+           <option>3</option>
+           <option>4</option>
+           <option>5</option>
+           <option>6</option>
+           <option>7</option>
+           <option>8</option>
+           <option>9</option>
+           <option>10</option>
+           <option>11</option>
+           <option>12</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="set5weight">Set 5 Weight:</label>
+        <select class="form-control" name="set5weight">
+           <option>0</option>
+           <option>5</option>
+           <option>10</option>
+           <option>15</option>
+           <option>20</option>
+           <option>25</option>
+           <option>30</option>
+           <option>35</option>
+           <option>40</option>
+           <option>45</option>
+           <option>50</option>
+           <option>55</option>
+           <option>60</option>
+           <option>65</option>
+           <option>70</option>
+           <option>75</option>
+           <option>80</option>
+           <option>85</option>
+           <option>90</option>
+           <option>95</option>
+           <option>100</option>
+           <option>105</option>
+           <option>110</option>
+           <option>115</option>
+           <option>120</option>
+           <option>125</option>
+           <option>130</option>
+           <option>135</option>
+           <option>140</option>
+           <option>145</option>
+           <option>150</option>
+           <option>155</option>
+           <option>160</option>
+           <option>165</option>
+           <option>170</option>
+           <option>175</option>
+           <option>180</option>
+           <option>185</option>
+           <option>190</option>
+           <option>195</option>
+           <option>200</option>
+           <option>205</option>
+           <option>210</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="set5reps">Set 5 Reps:</label>
+        <select class="form-control" name="set5reps">
+           <option>0</option>
+           <option>1</option>
+           <option>2</option>
+           <option>3</option>
+           <option>4</option>
+           <option>5</option>
+           <option>6</option>
+           <option>7</option>
+           <option>8</option>
+           <option>9</option>
+           <option>10</option>
+           <option>11</option>
+           <option>12</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="comment">Notes:</label>
+        <textarea class="form-control" rows="4" id="comment"></textarea>
+      </div>
+
+    <button type="submit" class="btn btn-success btn-lg btn-block">Submit</button>
+  </form>
+</div>
 
    </body>
 </html>
