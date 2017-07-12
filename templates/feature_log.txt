@@ -1,0 +1,15 @@
+feature log:
+
+1. create an option for users to add their own exercises
+  - this "profile" of exercises will be stored and read to
+    populate the drop down menus
+2. create a login page for users and adapt DB to store username data
+  - when you adapt the DB also add the date of the exercise
+3. consider options for visualization of data
+  - prioritize the top 3 most valuable types of visualization
+    - per exercise
+    - per workout date
+    -
+4. build the dropdowns and set/weight options dynamically
+  - don't make the user have to submit blank fields or look
+    thru exercises that don't apply to the stated body part
